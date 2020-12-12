@@ -40,7 +40,7 @@ export class Verse extends Component {
                 </Link>
                 <div className="card">
                     <div className="all-center">
-                        <a href={onlineBibleUrl} className='btn btn-link' target='_blank'>Open In Another Tab</a>
+                        <a href={onlineBibleUrl} className='btn btn-link' target='_blank' rel="noreferrer">Open In Another Tab</a>
                         <iframe src={onlineBibleUrl} width="100%" height="600px" title="Phil Johnson Sermons"></iframe>
                     </div>
                 </div>
