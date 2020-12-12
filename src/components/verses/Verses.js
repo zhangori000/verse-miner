@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 import Users from '../users/Users';
 
 const Verses = ({ verses, loading }) => {
+    
     if(loading) {
         return <Spinner />
     } else {
         return(
             <div style={userStyle}>
+                
                 {verses.map(v => (
                     <VerseItem key={v.bookname + v.chapter + ':' + v.verse} verse={v} />
                 ))}

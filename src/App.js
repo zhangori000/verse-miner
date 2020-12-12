@@ -62,7 +62,7 @@ class App extends Component {
       var passageString = '';
       this.parseVerseInput(cleanText).forEach(verseItem => {
         const [bookname, chapter, verse] = verseItem;
-        passageString += `${bookname}%20${chapter}${verse};`;
+        passageString += `${bookname}%20${chapter}${verse};`; //verse has colon in it. 
         console.log(passageString);
       });
       
@@ -71,6 +71,7 @@ class App extends Component {
       const res = await axios.get(CORSLink + apiLinks['bible']);
       console.log('res.data', res.data);
       this.setState({ verses: res.data, loading: false})
+      //afterwards, verses is filled with JSON objects containing "bookname", "chapter", and "verse" key (no colon).
     } 
     else if(currentUseCase === "github") {
       console.log("not implemented yet");
@@ -91,7 +92,7 @@ class App extends Component {
         currentBookname = 'Genesis';
         currentChapter = '1';
         currentVerse = ':1';
-        singleVerse = [currentBookname, currentChapter, currentVerse];
+        singleVerse = [currentBookname, currentChapter, currentVerse]; //redundant?
         this.setAlert('Invalid input', 'light');
       }
       parsedVerses.push(singleVerse);
@@ -115,7 +116,7 @@ class App extends Component {
     }
     console.log(text[subStringEndPoint]);
     if(text[subStringEndPoint] === ';') {
-      console.log("in here");
+      console.log("all numbers: error");
       return ['', '', ''];
     }
     //Retrieving Bookname substring
@@ -138,10 +139,11 @@ class App extends Component {
 
     //Retreiving Verse Substring
     if(text[subStringEndPoint] === ';') {
+      //this value SHOULD have been colon. If it is semicolon then there is no verse. Simply return without verse.
       parsedVerse.push('');
       return parsedVerse;
     }
-    subStringStartPoint = subStringEndPoint; //skip the colon
+    subStringStartPoint = subStringEndPoint; //keep in mind I did not skip colon. Verse has a colon in front of it. 
     while(text[subStringEndPoint] !== ';') {
       subStringEndPoint++;
     }
