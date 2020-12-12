@@ -38,6 +38,9 @@ export class Verse extends Component {
                 <Link to='/verse-miner/' className='btn btn-light'>
                     Back to Search
                 </Link>
+                <div class="all-center" style={{width:"350px"}}>
+                    <img src={logo} alt="logo"/>
+                </div>
                 <div className="card">
                     <div className="all-center">
                         <a href={onlineBibleUrl} className='btn btn-link' target='_blank' rel="noreferrer">Open In Another Tab</a>
@@ -64,7 +67,8 @@ export class Verse extends Component {
                         <a href={bibleHubParallel} target='_blank' rel="noreferrer" className='btn-sm btn-dark my-1'>Version Comparison</a>
                     </div>  
                 </div>
-                <img src={logo} alt="logo"/>
+                
+                
             </Fragment>
         );
     }
