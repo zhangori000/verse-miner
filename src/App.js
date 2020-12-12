@@ -200,7 +200,7 @@ class App extends Component {
         <div className="container">
           <Alert alert={this.state.alert}/>
           <Switch>
-            <Route exact path='/' render={props => (
+            <Route exact path='/verse-miner/' render={props => (
               <Fragment>
                 <Search 
                   searchVerses={this.searchVerses} 
