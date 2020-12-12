@@ -1,5 +1,5 @@
 # Use this link: https://zhangori000.github.io/verse-miner/
-There is a bug that I haven't fixed yet. You must click the 'home' button in the Navigation bar or else the page will be blank
+There could be bugs that I haven't fixed yet. Click home button if you see a white screen
 
 
 # Getting Started with Create React App
