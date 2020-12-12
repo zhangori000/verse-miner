@@ -88,12 +88,21 @@ class App extends Component {
       var singleVerse = this.getVerse(text, currentIdx);
       var [currentBookname, currentChapter, currentVerse] = singleVerse;
       //api returns gensis 1:1 when query is undefined
+      
       if(currentChapter === '') {
+        var errorName = "invalid";
+        if(currentVerse === "Entire Book") {
+          errorName = "EntireBook";
+        }
         currentBookname = 'Genesis';
         currentChapter = '1';
         currentVerse = ':1';
         singleVerse = [currentBookname, currentChapter, currentVerse]; //redundant?
-        this.setAlert('Invalid input', 'light');
+        if(errorName === "EntireBook") {
+          this.setAlert('We cannot print out ENTIRE books; only chapters. e.g -> Eph 2-3; Micah 1-7; John 2; Lk 3', 'light',errorName);
+        } else {
+          this.setAlert('Invalid input', 'light', errorName);
+        }
       }
       parsedVerses.push(singleVerse);
       console.log("length:", singleVerse);
@@ -124,8 +133,8 @@ class App extends Component {
       subStringEndPoint++;
     }
     if(text[subStringEndPoint] === ';') {
-      this.setAlert('We Cannot Print An Entire Book', 'light');
-      return [text.substring(subStringStartPoint, subStringEndPoint), '', ''];
+      console.log("cannot print entire books");
+      return [text.substring(subStringStartPoint, subStringEndPoint), '', 'Entire Book'];
     }
 
     parsedVerse.push(text.substring(startingValue ,subStringEndPoint));
@@ -155,10 +164,19 @@ class App extends Component {
   clearVerses = () => this.setState({ verses: [], loading: false });
 
   // Set Alert
-  setAlert = (msg, type) => {
+  setAlert = (msg, type, errorType) => {
     this.setState({ alert: {msg, type}});
-
-    setTimeout(() => this.setState({ alert: null}), 3000);
+    console.log(errorType);
+    if(errorType === "invalid") {
+      setTimeout(() => this.setState({ alert: null}), 3000);
+    }
+    else if(errorType === "EntireBook") {
+      setTimeout(() => this.setState({ alert: null}), 6000);
+    }
+    else if(errorType === "EmptyInput") {
+      setTimeout(() => this.setState({ alert: null}), 3000);
+    }
+    
   }
 
   //Get Single Verse data.

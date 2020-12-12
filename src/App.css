@@ -135,6 +135,12 @@ h1 {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
 /* List */
 .list {
   margin: 0.5rem 0;
@@ -343,7 +349,7 @@ input:focus {
 }
 
 input::placeholder {
-  color: #333;
+  color: rgb(129, 129, 129);
 }
 
 .form-text {
@@ -420,6 +426,14 @@ table th {
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
+  }
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* buttons */
+  .button-list {
+    display: grid;
   }
 
   /* Text Styles */

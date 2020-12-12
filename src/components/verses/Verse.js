@@ -49,7 +49,7 @@ export class Verse extends Component {
                 </div>
                 <div className='card text-center all-center'>
                     <h1> Sermons: </h1>
-                    <div>
+                    <div className="button-list">
                         <a href={philJohnsonUrl} target='_blank' rel="noreferrer" className='btn-sm btn-dark my-1'>Phil Johnson</a>
                         <a href={johnMacarthurUrl} target='_blank' rel="noreferrer" className='btn-sm btn-dark my-1'>John MacArthur</a>
                         <a href={paulWasherUrl} target='_blank' rel="noreferrer" className='btn-sm btn-dark my-1'>Paul Washer</a>
@@ -58,7 +58,7 @@ export class Verse extends Component {
                 </div>
                 <div className='card text-center all-center'>
                     <h1> Other resources: </h1>
-                    <div>
+                    <div className="button-list">
                         <a href={bibleOrgUrl} target='_blank' rel="noreferrer" className='btn-sm btn-dark my-1'>Bible.com Study Guides</a>
                         <a href={bibleHubUrl} target='_blank' rel="noreferrer" className='btn-sm btn-dark my-1'>Bible Hub</a>
                         <a href={constablesNotesUrl} target='_blank' rel="noreferrer" className='btn-sm btn-dark my-1'>Constable's Notes</a>

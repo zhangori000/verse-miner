@@ -16,7 +16,7 @@ class Search extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         if(this.state.text === '') {
-            this.props.setAlert('Please Enter Something', 'light');
+            this.props.setAlert('Please Enter Something', 'light', "EmptyInput");
         } else {
             this.props.searchVerses(this.state.text);
             this.setState({ text: ''});
@@ -34,7 +34,7 @@ class Search extends Component {
                     <input 
                         type="text" 
                         name="text" 
-                        placeholder="Search Verses..."
+                        placeholder="Chapters: Romans 1-2, Verses: Romans 1:16, or Combination (use semi-colon): Romans 1-2; Romans 8:26"
                         value={this.state.text}
                         onChange={this.onChange}
                     />
