@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Use this link: https://zhangori000.github.io/verse-miner/
+There is a bug that I haven't fixed yet. You must click the 'home' button in the Navigation bar or else the page will be blank
 
 ## Available Scripts
 
