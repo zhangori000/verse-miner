@@ -35,7 +35,7 @@ export class Verse extends Component {
         if(loading) return <Spinner/>
         return (
             <Fragment>
-                <Link to='/' className='btn btn-light'>
+                <Link to='/verse-miner/' className='btn btn-light'>
                     Back to Search
                 </Link>
                 <div className="card">
