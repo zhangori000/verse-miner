@@ -18,6 +18,7 @@ const Signin = () => {
                 />
                 <input type="submit" value="Sign In" className="btn btn-dark btn-block" />
                 <input type="submit" value="Register" className="btn btn-light btn-block" />
+                <b>Sign in feature has not been implemented yet</b>
             </form>
         </div>
         

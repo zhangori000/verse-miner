@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import VerseItem from './VerseItem';
 import Spinner from '../layout/Spinner';
-import PropTypes from 'prop-types';
-import Users from '../users/Users';
+import VerseContext from '../../context/verse/verseContext';
 
-const Verses = ({ verses, loading }) => {
+const Verses = (    ) => {
+    const verseContext = useContext(VerseContext);
+
+    const { loading, verses } = verseContext;
     
     if(loading) {
         return <Spinner />
@@ -19,11 +21,6 @@ const Verses = ({ verses, loading }) => {
         );
     }
     
-}
-
-Verses.propTypes = {
-    verses: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired
 }
 
 
