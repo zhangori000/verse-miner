@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const VerseItem = ({ verse: { bookname, chapter, verse, text }}) => {
+    useEffect(() => {
+        AOS.init({
+            delay: 200,
+        });
+        AOS.refresh();
+    
+    }, []);
+
     return(
-        <div className='card text-center'>
+        <div className='card text-center' data-aos='zoom-in-down'>
             <h3>{`${bookname} ${chapter}:${verse}`}</h3>
 
             <div>

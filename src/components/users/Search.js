@@ -1,9 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import VerseContext from '../../context/verse/verseContext';
 import AlertContext from '../../context/alert/alertContext';
 
+import AOS from 'aos';
+import "aos/dist/aos.css";
+
 const Search = () => {
+    useEffect(() => {
+        AOS.init({
+            delay: 200,
+        });
+        AOS.refresh();
+    
+    }, []);
+
     const verseContext = useContext(VerseContext);
     const alertContext = useContext(AlertContext);
     
@@ -23,8 +34,8 @@ const Search = () => {
 
     return(
         <div>
-            <form onSubmit={onSubmit} className="form">
-                <input 
+            <form onSubmit={onSubmit} className="form" data-aos="flip-up">
+                <input data-aos="fade-down"
                     type="text" 
                     name="text" 
                     placeholder="John 3:16-18; John 3-8"
@@ -37,6 +48,7 @@ const Search = () => {
             <button 
                 className="btn btn-light btn-block" 
                 onClick={verseContext.clearVerses}
+                
             >
                 Clear
             </button>

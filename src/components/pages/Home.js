@@ -3,10 +3,14 @@ import Search from '../users/Search';
 import Verses from '../verses/Verses';
 
 
+
+
 const Home = () => {
+   
+
     return (
-        <Fragment>
-            <Search />
+        <Fragment >
+            <Search data-aos="flip-up"/>
             <Verses />
         </Fragment>
     );

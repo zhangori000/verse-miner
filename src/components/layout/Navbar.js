@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const Navbar = ({ icon, title }) =>  {
+    useEffect(() => {
+        AOS.init({
+            delay: 200,
+        });
+        AOS.refresh();
+    
+    }, []);
     return(
-        <nav className="navbar bg-primary">
+        
+
+        <nav className="navbar bg-primary" data-aos="fade-down">
             <h1>
                 <i className={icon}/> {title} 
             </h1>
