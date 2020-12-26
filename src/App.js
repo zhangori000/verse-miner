@@ -31,7 +31,7 @@ const App = () => {
           <Alert />
           <Switch>
             
-            <Route eact path='/' component={Home} />
+            <Route exact path='/verse-miner/' component={Home} />
             <Route exact path='/about' component={About} />
             <Route exact path='/signin' component={Signin} />
             <Route exact path='/verse/:verseData' component={Verse}/>

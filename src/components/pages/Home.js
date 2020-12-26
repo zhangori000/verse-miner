@@ -10,7 +10,7 @@ const Home = () => {
 
     return (
         <Fragment >
-            <Search data-aos="flip-up"/>
+            <Search />
             <Verses />
         </Fragment>
     );
