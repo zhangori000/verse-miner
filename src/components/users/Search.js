@@ -34,8 +34,8 @@ const Search = () => {
 
     return(
         <div>
-            <form onSubmit={onSubmit} className="form" data-aos="flip-up">
-                <input data-aos="fade-down"
+            <form onSubmit={onSubmit} className="form" >
+                <input 
                     type="text" 
                     name="text" 
                     placeholder="John 3:16-18; John 3-8"

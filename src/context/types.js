@@ -4,7 +4,10 @@ export const SET_LOADING = 'SET_LOADING';
 export const GET_VERSE_ASSOCIATIONS = 'GET_VERSE_ASSOCIATIONS';
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
-
+export const CHANGE_ROUTE = 'CHANGE_ROUTE';
+export const ON_EMAIL_CHANGE = 'ON_EMAIL_CHANGE';
+export const ON_PASSWORD_CHANGE = 'ON_PASSWORD_CHANGE';
+export const ON_SUBMIT_SIGNIN = 'ON_SUBMIT_SIGNIN';
 
 
 

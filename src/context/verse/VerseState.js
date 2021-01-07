@@ -209,7 +209,8 @@ const VerseState = props => {
                 loading: state.loading,
                 searchVerses,
                 clearVerses,
-                getVerseAssociations
+                getVerseAssociations,
+                setLoading
             }} 
         >
             {props.children}
